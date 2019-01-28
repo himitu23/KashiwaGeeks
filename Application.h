@@ -106,7 +106,7 @@ typedef struct
 {
     void (*callback)(void);
     uint32_t start;
-    uint32_t interval;
+    float interval;//uint32_t
 } TaskList_t;
 
 /* Interrupt Status */
@@ -157,7 +157,7 @@ public:
     ~TaskManager(void);
 
     void initialize(void);
-    void addTask(void (*)(), uint32_t start, uint32_t interval);
+    void addTask(void (*)(), uint32_t start, float interval);//uint32_t
     void execute(void);
     void printTaskEvents(void);
 private:
@@ -185,7 +185,8 @@ public:
     void execute(void);
 private:
     uint32_t _remainTime;
-    uint32_t _interval;
+    //uint32_t _interval;
+    float _interval;
     uint32_t  _startTime;
     uint32_t _count;
     uint8_t _isRunning;

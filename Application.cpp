@@ -560,7 +560,7 @@ TaskManager::~TaskManager(void)
     }
 }
 
-void TaskManager::addTask(void (*task)(), uint32_t start, uint32_t interval)
+void TaskManager::addTask(void (*task)(), uint32_t start, float interval)//uint32_t
 {
     TaskEvent* event = new TaskEvent(this);
     event->setEventCallback(task);
